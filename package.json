@@ -1,0 +1,29 @@
+{
+  "name": "quran-diff-checker",
+  "version": "1.0.0",
+  "description": "Web tool for counting and highlighting differences between Quran versions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedhammad97/Quran-Diff-Checker.git"
+  },
+  "keywords": [
+    "Quran",
+    "Differences",
+    "Checker",
+    "DiffCheck"
+  ],
+  "author": "Ahmed Hammad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmedhammad97/Quran-Diff-Checker/issues"
+  },
+  "homepage": "https://github.com/ahmedhammad97/Quran-Diff-Checker#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "node-html-parser": "^1.2.20"
+  }
+}
