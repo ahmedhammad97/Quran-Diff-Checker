@@ -22,6 +22,7 @@ const fetchSurah = (reading, surahNum) => {
           .join("")
           .replace(/(\r\n|\n|\r)/gm, " ")
           .replace(/\s\s+/g, " ")
+          .replace(/([\u0610-\u0617\u06D6-\u06DE\u06E2-\u06ED])/g, "")
           .replace(/[0-9]/g, "(")
           .split(new RegExp(["\\\(", "\\\)"].join("|"), "g"))
           .map((ayah) => ayah.trim())
