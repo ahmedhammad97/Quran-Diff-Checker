@@ -1,4 +1,6 @@
-var arabicNormChar = {
+const spawn = require("child_process").spawn;
+
+const arabicNormChar = {
   "ﻷ": "لا",
   "ؤ": "و",
   "ى": "ی",
@@ -22,6 +24,7 @@ var arabicNormChar = {
   "ٰ": "",
   "ٔ": "",
   "�": "",
+  "ے" : "ى"
 };
 
 var simplifyArabic = function (str) {
@@ -44,7 +47,13 @@ const removeTashkil = function (text) {
   text.replace(/([\u0622-\u0623\u0625\u0627\u0671-\u0673\u0675])/g, "ا");
   text.replace(/([\u0620\u0626\u0649\u064A\u06CC-\u06CE\u06D0-\u06D3])/g, "ی");
 
-  return text.normalize("NFKD").toLowerCase();
+  const pythonProcess = spawn('python3',[__dirname + "/tashkil_remover.py", text]);
+
+  return new Promise((resolve, reject) => {
+    pythonProcess.stdout.on('data', (data) => {
+      resolve(data.toString().normalize("NFKD").toLowerCase());
+    });
+  });
 };
 
 module.exports = { removeTashkil };
