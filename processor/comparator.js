@@ -31,6 +31,8 @@ let compareWithoutTashkil = (surahNum, reference, compareTo) => {
 };
 
 let compareAllReadings = async (compareFunc, path) => {
+  const comparisions = ["hafsVSwarsh", "hafsVSdoori", "hafsVSsosi", "hafsVSqumbul", "hafsVSbazzi"];
+
   for (let i = 1; i < 115; i++) {
     Promise.all([
       compareFunc(i, "hafs", "warsh"),
@@ -39,31 +41,14 @@ let compareAllReadings = async (compareFunc, path) => {
       compareFunc(i, "hafs", "qumbul"),
       compareFunc(i, "hafs", "albazzi")
     ]).then((results) => {
-      let resultObj = {
-        "reference": "hafs",
-        "surah": i,
-        "hafsVSwarsh": {
-          "diffCount": getDiffCount(results[0]),
-          "diffs": results[0],
-        },
-        "hafsVSdoori": {
-          "diffCount": getDiffCount(results[1]),
-          "diffs": results[1],
-        },
-        "hafsVSsosi": {
-          "diffCount": getDiffCount(results[2]),
-          "diffs": results[2],
-        },
-        "hafsVSqumbul": {
-          "diffCount": getDiffCount(results[3]),
-          "diffs": results[3],
-        },
-        "hafsVSbazzi": {
-          "diffCount": getDiffCount(results[4]),
-          "diffs": results[4],
-        },
-      };
-      
+      let resultObj = { "reference": "hafs", "surah": i }
+      for (let k = 0; k < 5; k++) {
+        resultObj[comparisions[k]] = {
+          "diffCount": getDiffCount(results[k]),
+          "diffs": results[k]
+        };
+      }
+
       fs.writeFileSync(
         `./results/${path}/${i}.json`,
         JSON.stringify(resultObj),
@@ -71,6 +56,7 @@ let compareAllReadings = async (compareFunc, path) => {
           if (err) console.log(err);
         },
       );
+      
       console.log("Done " + i + " : " + path);
     });
   }
