@@ -1,4 +1,8 @@
 const comparator = require("./processor/comparator");
 
-comparator.compareAllReadingsWithTashkil();
-comparator.compareAllReadingsWithoutTashkil();
+(function main() {
+    comparator.compareAllReadingsWithTashkil();
+    comparator.compareAllReadingsWithoutTashkil();
+})()
+
+
