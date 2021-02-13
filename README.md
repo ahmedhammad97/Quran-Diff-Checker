@@ -2,9 +2,9 @@
 
 ## Introduction
 
-With the existence of multiple recitations (qira'at) in different areas of the Islamic world, the [differences](https://answering-islam.org/Green/seven.htm) between them have been always a topic of argument for a long time, especially those differences which affect the meaning.
+With the existence of multiple recitations (qira'at) in different areas of the Islamic world, the [differences](https://answering-islam.org/Green/seven.htm) between them have been always a topic of argument for a long time, especially those differences that affect the meaning.
 
-In this experiment I will try to compare Hafs to five other famous recitations (Warsh, Doori, Sosi, Qumbul, Bazzi).
+In this experiment, I will try to compare Hafs to five other famous recitations (Warsh, Doori, Sosi, Qumbul, Bazzi).
 
 
 
@@ -16,7 +16,7 @@ The removing of *tashkeel* was done over two phases:
 - Regular Expressions amendments, where various shapes of the same letter was all replaced to a one normalized shape, as well as removing all *tashkeel* unicodes
 - [PyArabic](https://pypi.org/project/PyArabic/) library, which provides a set of useful apis for stripping the Arabic words from other noise types
 
-Finally, the comparison was done using [diff-match-patch](https://www.npmjs.com/package/diff-match-patch), which computes all the necessary transformations that should be added/removed/modified to a string in order to match another string. Note that a single word might contain be counted as multiple differences due to multiple transformations.
+Finally, the comparison was done using [diff-match-patch](https://www.npmjs.com/package/diff-match-patch), which computes all the necessary transformations that should be added/removed/modified to a string in order to match another string. Note that a single word might be counted as multiple differences due to multiple transformations.
 
 
 
