@@ -44,8 +44,11 @@ const removeTashkil = function (text) {
     "",
   );
 
-  text.replace(/([\u0622-\u0623\u0625\u0627\u0671-\u0673\u0675])/g, "ا");
-  text.replace(/([\u0620\u0626\u0649\u064A\u06CC-\u06CE\u06D0-\u06D3])/g, "ی");
+  text = text.replace(/([\u0622-\u0623\u0625\u0627\u0671-\u0673\u0675])/g, "ا");
+  text = text.replace(/([\u0620\u0626\u0649\u064A\u06CC-\u06CE\u06D0-\u06D3])/g, "ی");
+
+  //overriding this difference as it could be considered a writing style rather than a difference
+  text = text.replace("ی", "ا");
 
   const pythonProcess = spawn('python3',[__dirname + "/tashkil_remover.py", text]);
 
