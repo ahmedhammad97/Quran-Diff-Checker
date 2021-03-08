@@ -2,9 +2,9 @@
 
 ## Introduction
 
-With the existence of multiple recitations (qira'at) in different areas of the Islamic world, the [differences](https://answering-islam.org/Green/seven.htm) between them have been always a topic of argument for a long time, especially those differences which affect the meaning.
+With the existence of multiple recitations (qira'at) in different areas of the Islamic world, the [differences](https://answering-islam.org/Green/seven.htm) between them have been always a topic of argument for a long time, especially those differences that affect the meaning.
 
-In this experiment I will try to compare Hafs to five other famous recitations (Warsh, Doori, Sosi, Qumbul, Bazzi).
+In this experiment, I will try to compare Hafs to five other famous recitations (Warsh, Doori, Sosi, Qumbul, Bazzi).
 
 
 
