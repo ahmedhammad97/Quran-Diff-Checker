@@ -24,7 +24,7 @@
   "homepage": "https://github.com/ahmedhammad97/Quran-Diff-Checker#readme",
   "dependencies": {
     "diff-match-patch": "^1.0.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "node-html-parser": "^1.2.20"
   }
 }
